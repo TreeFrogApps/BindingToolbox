@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.home.markkeen.mybindingappv2.BindingTypesFragment"
+    android:background="@color/bg_main">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:background="@color/bg_main">
+
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg_main"></LinearLayout>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/paper_types_header"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/main_text"
+                    android:text="@string/paper_heading" />
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/bg_main"></LinearLayout>
+
+            <TableRow android:background="@color/actionbar">
+
+                <TextView
+                    android:id="@+id/paper_types_coated"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/white_text"
+                    android:textSize="18sp"
+                    android:text="@string/paper_coated" />
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg_main"></LinearLayout>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/paper_types_coated_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/main_text"
+                    android:text="@string/paper_coated_2" />
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/bg_main"></LinearLayout>
+
+            <TableRow android:background="@color/actionbar">
+
+                <TextView
+                    android:id="@+id/paper_types_uncoated"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/white_text"
+                    android:textSize="18sp"
+                    android:text="@string/paper_uncoated" />
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg_main"></LinearLayout>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/paper_types_uncoated_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/main_text"
+                    android:text="@string/paper_uncoated_2" />
+            </TableRow>
+
+
+        </TableLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/order_by_date"
+        android:title="@string/order_by_date_menu"
+        android:orderInCategory="1"
+        android:visible="false"
+        />
+
+    <item android:id="@+id/order_by_name"
+        android:title="@string/order_by_name_menu"
+        android:orderInCategory="2"
+        android:visible="false"
+        />
+
+    <item android:id="@+id/order_by_width"
+        android:title="@string/order_by_spine_width_menu"
+        android:orderInCategory="3"
+        android:visible="false"
+        />
+
+    <item android:id="@+id/order_by_weight"
+        android:title="@string/order_by_book_weight_menu"
+        android:orderInCategory="4"
+        android:visible="false"
+        />
+
+    <item android:id="@+id/action_help"
+        android:title="@string/help_menu"
+        android:orderInCategory="5"
+        android:visible="false"
+        />
+
+    <item android:id="@+id/action_delete"
+        android:title="@string/history_button_delete"
+        android:icon="@drawable/ic_delete_white_24dp"
+        android:showAsAction="ifRoom"
+        android:orderInCategory="10"
+        android:visible="false"
+        />
+</menu>

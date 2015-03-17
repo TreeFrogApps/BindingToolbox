@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Binding ToolBox</string>
+    <string name="name_hint">Untitled</string>
+    <string name="name">Name</string>
+
+    <string name="page_count_hint"> e.g. 112</string>
+    <string name="measurement">mm</string>
+    <string name="action_settings">Settings</string>
+    <string name="cover_weight">Weight of cover</string>
+    <string name="text_weight">Weight of text</string>
+    <string name="page_width">Page size width</string>
+    <string name="page_height">Page size height</string>
+    <string name="text_pages">Number of text pages</string>
+    <string name="binding_calculator">Binding Calculator</string>
+
+    <string-array name="paper_weights_cover">
+        <item>in gsm</item>
+        <item>130 (coated)</item>
+        <item>150 (coated)</item>
+        <item>170 (coated)</item>
+        <item>200 (coated)</item>
+        <item>250 (coated)</item>
+        <item>300 (coated)</item>
+        <item>350 (coated)</item>
+        <item>400 (coated)</item>
+        <item>120 (uncoated)</item>
+        <item>140 (uncoated)</item>
+        <item>150 (uncoated)</item>
+        <item>170 (uncoated)</item>
+        <item>190 (uncoated)</item>
+        <item>250 (uncoated)</item>
+        <item>300 (uncoated)</item>
+    </string-array>
+    <string-array name="paper_weights_text">
+        <item>in gsm</item>
+        <item>80 (coated)</item>
+        <item>90 (coated)</item>
+        <item>100 (coated)</item>
+        <item>115 (coated)</item>
+        <item>130 (coated)</item>
+        <item>150 (coated)</item>
+        <item>170 (coated)</item>
+        <item>200 (coated)</item>
+        <item>220 (coated)</item>
+        <item>250 (coated)</item>
+        <item>300 (coated)</item>
+        <item>80 (uncoated)</item>
+        <item>90 (uncoated)</item>
+        <item>100 (uncoated)</item>
+        <item>110 (uncoated)</item>
+        <item>120 (uncoated)</item>
+        <item>140 (uncoated)</item>
+        <item>150 (uncoated)</item>
+        <item>170 (uncoated)</item>
+        <item>190 (uncoated)</item>
+    </string-array>
+    <string-array name="nav_draw_items">
+        <item>Binding Calculator</item>
+        <item>Paper</item>
+        <item>Binding Types</item>
+        <item>History</item>
+    </string-array>
+
+    <string name="spine_width_button">CALCULATE</string>
+    <string name="reset_button">RESET</string>
+    <string name="spine_width_title">The spine width should be</string>
+    <string name="spine_width_amount">0.0 mm</string>
+    <string name="book_weight">The approximate weight per book</string>
+    <string name="book_grams">0.0 grams</string>
+    <string name="help_menu">Help</string>
+    <string name="order_by_date_menu">Sort by Date</string>
+    <string name="order_by_name_menu">Sort by A-Z</string>
+    <string name="order_by_spine_width_menu">Sort by Width</string>
+    <string name="order_by_book_weight_menu">Sort by Weight</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_my_activity_help">Help</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="history_date">Date</string>
+    <string name="history_page_width">Page Width</string>
+    <string name="history_page_height">Page Height</string>
+    <string name="history_page_count">Pages</string>
+    <string name="history_cover">Cover Stock</string>
+    <string name="history_text">Text Stock</string>
+    <string name="history_spine_width">Spine</string>
+    <string name="history_weight">Weight</string>
+    <string name="history_button_delete">DELETE</string>
+    <string name="history_button_edit">EDIT</string>
+    <string name ="history_name_hint">Untitled</string>
+
+    <string name="history_click">Click on an entry to edit</string>
+
+    <string name="perfect_binding">PERFECT BINDING</string>
+    <string name="pur_binding">PUR BINDING</string>
+    <string name="binding_types_header">
+        This application focuses on Perfect and PUR Binding, which are a very common form of binding and are widely used.</string>
+
+     <string name="perfect_binding_2">
+        Folded sections, or single leaves of text are gathered on top of each other to form a complete set.
+        A small amount is the ground off the spine edge and EVA glue (ethylene vinyl acetate) is applied.
+        The cover is then placed on and wrapped around the text. After a short period of drying the top,
+        bottom and fore-edge are trimmed to finish size.</string>
+
+    <string name="pur_binding_2">
+        In essence this uses the exact same process as Perfect Binding, the only difference is the type of glue used.
+        PUR Binding uses a polyurethane reactive adhesive.  PUR Binding offers advantages over Perfect Binding,
+        although both types are widely used.  Typically PUR Binding uses less glue on the spine of a book,
+        offering a more ’squared look’ to the spine, also it is around 40-60% stronger (page pull tests)
+        with more flexibility and pliability.
+    </string>
+
+    <string name="paper_heading">The main difference between paper is whether it is ‘coated’ or ‘uncoated’.
+        Both types are measured in grams per square metre (gsm).  Uncoated stock is thicker is comparison
+        to a coated stock of the same weight.</string>
+
+    <string name="paper_coated">COATED PAPER</string>
+
+    <string name="paper_coated_2">This paper type is generally smooth, it can have a gloss, matt or silk finish.
+        It can have a coating on one or both sides, but generally it will be on both sides.  When used in
+        litho printing it produces sharp and clear image as the coating restricts the amount of water and ink
+        that is absorbed.  Coated paper is widely used for magazines, brochures and book covers.</string>
+
+    <string name="paper_uncoated">UNCOATED PAPER</string>
+
+    <string name="paper_uncoated_2">As the name suggests uncoated paper does not have a coating.  It is generally
+        more absorbent and will have a coarser feel to it. Preprint is a type of uncoated paper and is generally used for
+        letterheads and compliment slips as it allows for ‘overprinting’ with a inkjet or laser printer.</string>
+
+    <string name="help_1">This application is primarily aimed at anyone in the Graphic Design, Print and PrePress industry,
+        but is useful to anyone who needs to find out the spine width and weight of a Perfect and PUR bound book. Although you don\'t have to put
+        in the book size this is often helpful especially if these produced books are for mailing and weight tariffs and costings apply</string>
+
+    <string name="help_2">Follow the steps in the Binding Calculator as follows:</string>
+    <string name="help_3">1. Choose a name (optional, but will be used in the history tab)</string>
+    <string name="help_4">2. Enter the books dimensions in millimeters</string>
+    <string name="help_5">3. Enter the number of TEXT pages (not including cover)</string>
+    <string name="help_6">4. Enter the stock (paper) weight (this is measured in ISO 536 standard grams per square metre, or gsm for short)</string>
+    <string name="help_7">5. Press the calculate button</string>
+    <string name="help_8">All final results are not the conclusive 100\%% accurate result as paper mills works within tolerances of 5\%%.
+              The only sure method of accuracy is to produce a final mock up book using the correct stock. However this application has
+                been used in a commercial environment and has proved to be accurate</string>
+
+
+</resources>

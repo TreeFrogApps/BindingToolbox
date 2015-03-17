@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="AF_BLUE">#00308F</color>
+    <color name="RED">#AF002A</color>
+    <color name="GREEN">#008000</color>
+    <color name="main_text">#999999</color>
+    <color name="GREY_VERYDARK">#CC000000</color>
+    <color name="GREY_DARK">#66000000</color>
+    <color name="actionbar">#607d8b</color>
+    <color name="slider_menu">#CC607d8b</color>
+    <color name="overflow">#ff85a4b2</color>
+    <color name="result_bg">#e2e7eb</color>
+    <color name="bg_main">#dde7ee</color>
+    <color name="white_text">#ddffffff</color>
+    <color name="card_pressed">#4D85a4b2</color>
+
+</resources>

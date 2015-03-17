@@ -1,0 +1,301 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingBottom="0dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_weight="15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/actionbar"
+                android:layout_marginRight="12dp"/>
+
+            <EditText
+                android:background="@drawable/edit_text_background"
+                android:paddingBottom="6dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:id="@+id/nameEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="textNoSuggestions|textCapSentences"
+                android:hint="@string/name_hint"
+                android:nextFocusDown="@+id/pageWidthEditText"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pageWidthTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:text="@string/page_width"
+                android:textColor="@color/main_text"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/pageHeightTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:text="@string/page_height"
+                android:textColor="@color/main_text"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="24dp">
+
+            <EditText
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text_background"
+                android:paddingBottom="6dp"
+                android:id="@+id/pageWidthEditText"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:hint="@string/measurement"
+                android:inputType="number"
+                android:nextFocusDown="@+id/pageHeightEditText"
+                android:gravity="center" />
+
+            <EditText
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text_background"
+                android:paddingBottom="6dp"
+                android:id="@+id/pageHeightEditText"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:hint="@string/measurement"
+                android:inputType="number"
+                android:nextFocusDown="@+id/pageCountEditText"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+        <TextView
+            android:id="@+id/textPagesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_pages"
+            android:textColor="@color/main_text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edit_text_background"
+            android:paddingBottom="6dp"
+            android:id="@+id/pageCountEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:inputType="number"
+            android:gravity="center" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/coverWeightTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:text="@string/cover_weight"
+                android:textColor="@color/main_text"
+                android:textSize="16sp"
+
+                />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/textWeightTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:text="@string/text_weight"
+                android:textColor="@color/main_text"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <Spinner
+                android:id="@+id/coverPaperWeightSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:entries="@array/paper_weights_cover"
+                android:focusableInTouchMode="false"
+                android:spinnerMode="dialog"
+
+                />
+
+            <Spinner
+                android:id="@+id/textPaperWeightSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:entries="@array/paper_weights_text"
+                android:spinnerMode="dialog"
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/actionbar"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:background="@color/result_bg"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/spineWidthTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/spine_width_title"
+            android:textColor="@color/actionbar"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_marginBottom="8dp"
+            android:id="@+id/spineWidthAmountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/spine_width_amount"
+            android:textColor="@color/actionbar"
+            android:textSize="40sp"
+            android:fontFamily="sans-serif-light" />
+
+        <TextView
+            android:layout_marginTop="0dp"
+            android:id="@+id/weightTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/book_weight"
+            android:textColor="@color/actionbar"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/bookWeightTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/book_grams"
+            android:textColor="@color/actionbar"
+            android:textSize="40sp"
+            android:fontFamily="sans-serif-light" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:background="@color/result_bg"
+        android:orientation="horizontal">
+
+        <Button
+            style="?android:attr/buttonBarStyle"
+            android:hapticFeedbackEnabled="true"
+            android:id="@+id/resetButton"
+            android:textColor="@color/white_text"
+            android:background="@drawable/calculate_button_pressed"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/reset_button" />
+
+        <Button
+            style="?android:attr/buttonBarStyle"
+            android:hapticFeedbackEnabled="true"
+            android:id="@+id/calculateButton"
+            android:textColor="@color/white_text"
+            android:background="@drawable/calculate_button_pressed"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/spine_width_button"
+
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

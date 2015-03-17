@@ -1,0 +1,48 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarSize">56dp</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="android:itemTextAppearance">@style/MenuTextAppearance</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowIcon</item>
+
+    </style>
+
+
+    <style name="ActionBar" parent="android:Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@color/actionbar</item>
+        <item name="android:titleTextStyle">@style/ActionBarText</item>
+
+    </style>
+
+    <style name="ActionBarText" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white_text</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="MyPopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/overflow</item>
+    </style>
+
+    <style name="MenuTextAppearance">
+        <item name="android:textColor">@color/white_text</item>
+    </style>
+
+    <style name="OverFlowIcon">
+        <item name="android:src">@drawable/ic_overflow</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
+    <style name="CardViewStyle" parent="android:Widget.TextView">
+        <item name="android:foreground">@drawable/card_pressed</item>
+
+    </style>
+
+
+</resources>
+
+

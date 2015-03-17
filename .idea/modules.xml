@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Binding ToolBox/Binding ToolBox.iml" filepath="$PROJECT_DIR$/Binding ToolBox/Binding ToolBox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyBindingAppV2.iml" filepath="$PROJECT_DIR$/MyBindingAppV2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Binding ToolBox/app.iml" filepath="$PROJECT_DIR$/Binding ToolBox/app.iml" />
+    </modules>
+  </component>
+</project>
+
