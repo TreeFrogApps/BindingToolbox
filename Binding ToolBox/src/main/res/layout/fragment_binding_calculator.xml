@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="24dp">
+            android:paddingBottom="18dp">
 
             <EditText
                 android:layout_marginTop="6dp"
@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="24dp">
+            android:paddingBottom="18dp">
 
         <TextView
             android:id="@+id/textPagesTextView"
@@ -142,7 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="6dp">
+            android:paddingBottom="0dp">
 
             <TextView
                 android:gravity="center"
