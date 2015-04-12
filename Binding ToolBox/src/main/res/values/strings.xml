@@ -138,9 +138,9 @@
     <string name="help_5">3. Enter the number of TEXT pages (not including cover)</string>
     <string name="help_6">4. Enter the stock (paper) weight (this is measured in ISO 536 standard grams per square metre, or gsm for short)</string>
     <string name="help_7">5. Press the calculate button</string>
-    <string name="help_8">All final results are not the conclusive 100\%% accurate result as paper mills works within tolerances of 5\%%.
-              The only sure method of accuracy is to produce a final mock up book using the correct stock. However this application has
-                been used in a commercial environment and has proved to be accurate</string>
+    <string name="help_8"> Disclaimer: \n\nAlthough thorough testing has been performed, and used in a commercial environment all final results are not the conclusively 100\%% accurate as paper manufacturers work within tolerances of 5\%%.
+              No responsibility or liability is taken for any inaccurate calculations.</string>
+    <string name="tree_frog_apps">\u00a9 Tree Frog Apps</string>
 
 
 </resources>

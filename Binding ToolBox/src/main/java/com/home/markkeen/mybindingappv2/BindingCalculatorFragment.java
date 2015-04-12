@@ -239,7 +239,7 @@ public class BindingCalculatorFragment extends Fragment implements View.OnClickL
                 imm.hideSoftInputFromWindow(pageCountET.getWindowToken(), 0);
 
 
-                paperWeightValuesText[0] = (textPageWeightSpinner.getSelectedItem().equals("80 (coated)")) ? 0.065 : 0;
+                paperWeightValuesText[0] = (textPageWeightSpinner.getSelectedItem().equals("80 (coated)")) ? 0.068 : 0;
                 paperWeightValuesText[1] = (textPageWeightSpinner.getSelectedItem().equals("90 (coated)")) ? 0.07 : 0;
                 paperWeightValuesText[2] = (textPageWeightSpinner.getSelectedItem().equals("100 (coated)")) ? 0.08 : 0;
                 paperWeightValuesText[3] = (textPageWeightSpinner.getSelectedItem().equals("115 (coated)")) ? 0.09 : 0;
