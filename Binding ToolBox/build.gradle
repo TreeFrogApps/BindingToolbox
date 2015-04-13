@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.home.markkeen.mybindingappv2"
+        applicationId "com.home.treefogapps.bindingtoolbox"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
