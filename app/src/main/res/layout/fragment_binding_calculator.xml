@@ -4,7 +4,7 @@
     android:background="@color/bg_main"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -14,7 +14,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_weight="15">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp">
@@ -27,9 +27,9 @@
                 android:layout_marginBottom="16dp"
                 android:textSize="18sp"
                 android:textColor="@color/actionbar"
-                android:layout_marginRight="12dp"/>
+                android:layout_marginEnd="12dp"/>
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:background="@drawable/edit_text_background"
                 android:paddingBottom="6dp"
                 android:paddingLeft="6dp"
@@ -41,46 +41,46 @@
                 android:inputType="textNoSuggestions|textCapSentences"
                 android:hint="@string/name_hint"
                 android:nextFocusDown="@+id/pageWidthEditText"/>
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/pageWidthTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/page_width"
                 android:textColor="@color/main_text"
                 android:textSize="16sp"
                 android:gravity="center" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/pageHeightTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:text="@string/page_height"
                 android:textColor="@color/main_text"
                 android:textSize="16sp"
                 android:gravity="center" />
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="18dp">
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:layout_marginTop="6dp"
                 android:background="@drawable/edit_text_background"
                 android:paddingBottom="6dp"
@@ -88,13 +88,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:hint="@string/measurement"
                 android:inputType="number"
                 android:nextFocusDown="@+id/pageHeightEditText"
                 android:gravity="center" />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:layout_marginTop="6dp"
                 android:background="@drawable/edit_text_background"
                 android:paddingBottom="6dp"
@@ -102,20 +102,20 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:hint="@string/measurement"
                 android:inputType="number"
                 android:nextFocusDown="@+id/pageCountEditText"
                 android:gravity="center" />
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="18dp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textPagesTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
             android:textColor="@color/main_text"
             android:textSize="16sp" />
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:layout_marginTop="6dp"
             android:background="@drawable/edit_text_background"
             android:paddingBottom="6dp"
@@ -136,80 +136,74 @@
             android:inputType="number"
             android:gravity="center" />
 
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="0dp">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:gravity="center"
                 android:id="@+id/coverWeightTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/cover_weight"
                 android:textColor="@color/main_text"
                 android:textSize="16sp"
 
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:gravity="center"
                 android:id="@+id/textWeightTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:text="@string/text_weight"
                 android:textColor="@color/main_text"
                 android:textSize="16sp" />
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
-
-            <Spinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/coverPaperWeightSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:entries="@array/paper_weights_cover"
                 android:focusableInTouchMode="false"
-                android:spinnerMode="dialog"
+                android:spinnerMode="dialog" />
 
-                />
-
-            <Spinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/textPaperWeightSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:entries="@array/paper_weights_text"
-                android:spinnerMode="dialog"
+                android:spinnerMode="dialog" />
 
-                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </LinearLayout>
-
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/actionbar"></LinearLayout>
+        android:background="@color/actionbar"/>
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
@@ -217,7 +211,7 @@
         android:background="@color/result_bg"
         android:gravity="center">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/spineWidthTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -226,7 +220,7 @@
             android:textColor="@color/actionbar"
             android:textSize="16sp" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_marginBottom="8dp"
             android:id="@+id/spineWidthAmountTextView"
             android:layout_width="match_parent"
@@ -237,7 +231,7 @@
             android:textSize="40sp"
             android:fontFamily="sans-serif-light" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_marginTop="0dp"
             android:id="@+id/weightTextView"
             android:layout_width="match_parent"
@@ -247,7 +241,7 @@
             android:textColor="@color/actionbar"
             android:textSize="16sp" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/bookWeightTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -257,45 +251,42 @@
             android:textSize="40sp"
             android:fontFamily="sans-serif-light" />
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2.5"
         android:background="@color/result_bg"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             style="?android:attr/buttonBarStyle"
             android:hapticFeedbackEnabled="true"
             android:id="@+id/resetButton"
             android:textColor="@color/white_text"
             android:background="@drawable/calculate_button_pressed"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:text="@string/reset_button" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             style="?android:attr/buttonBarStyle"
             android:hapticFeedbackEnabled="true"
             android:id="@+id/calculateButton"
             android:textColor="@color/white_text"
             android:background="@drawable/calculate_button_pressed"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="@string/spine_width_button"
+            android:text="@string/spine_width_button" />
 
-            />
-
-
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </LinearLayout>

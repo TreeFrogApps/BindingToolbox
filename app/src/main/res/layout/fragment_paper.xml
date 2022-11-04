@@ -2,110 +2,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.home.treefrogapps.bindingtoolbox.BindingTypesFragment"
-    android:background="@color/bg_main">
+    android:background="@color/bg_main"
+    tools:context="com.home.treefrogapps.bindingtoolbox.BindingTypesFragment">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
         android:background="@color/bg_main">
-
 
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:background="@color/bg_main"></LinearLayout>
+                android:background="@color/bg_main" />
 
             <TableRow>
 
                 <TextView
                     android:id="@+id/paper_types_header"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:padding="15dp"
-                    android:textSize="16sp"
+                    android:text="@string/paper_heading"
                     android:textColor="@color/main_text"
-                    android:text="@string/paper_heading" />
+                    android:textSize="16sp" />
             </TableRow>
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:background="@color/bg_main"></LinearLayout>
+                android:background="@color/bg_main" />
 
             <TableRow android:background="@color/actionbar">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/paper_types_coated"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:padding="10dp"
+                    android:text="@string/paper_coated"
                     android:textColor="@color/white_text"
-                    android:textSize="18sp"
-                    android:text="@string/paper_coated" />
+                    android:textSize="18sp" />
             </TableRow>
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:background="@color/bg_main"></LinearLayout>
+                android:background="@color/bg_main" />
 
             <TableRow>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/paper_types_coated_text"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:padding="15dp"
-                    android:textSize="16sp"
+                    android:text="@string/paper_coated_2"
                     android:textColor="@color/main_text"
-                    android:text="@string/paper_coated_2" />
+                    android:textSize="16sp" />
             </TableRow>
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:background="@color/bg_main"></LinearLayout>
+                android:background="@color/bg_main" />
 
             <TableRow android:background="@color/actionbar">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/paper_types_uncoated"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:padding="10dp"
+                    android:text="@string/paper_uncoated"
                     android:textColor="@color/white_text"
-                    android:textSize="18sp"
-                    android:text="@string/paper_uncoated" />
+                    android:textSize="18sp" />
             </TableRow>
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:background="@color/bg_main"></LinearLayout>
+                android:background="@color/bg_main" />
 
             <TableRow>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/paper_types_uncoated_text"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:padding="15dp"
-                    android:textSize="16sp"
+                    android:text="@string/paper_uncoated_2"
                     android:textColor="@color/main_text"
-                    android:text="@string/paper_uncoated_2" />
+                    android:textSize="16sp" />
             </TableRow>
-
 
         </TableLayout>
     </ScrollView>

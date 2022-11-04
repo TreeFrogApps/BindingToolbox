@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -6,12 +6,11 @@
     android:background="@color/bg_main"
     tools:context="com.home.treefrogapps.bindingtoolbox.HistoryFragment">
 
-
-
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        tools:ignore="UselessParent">
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -33,4 +32,4 @@
                 </ListView>
         </TableRow>
     </TableLayout>
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

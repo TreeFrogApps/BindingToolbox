@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import java.text.SimpleDateFormat;
@@ -323,13 +325,13 @@ public class BindingCalculatorFragment extends Fragment implements View.OnClickL
 
         } else if (pageWidth > 0 && pageHeight > 0) {
 
-            Double pagesPerMetre = (1000 / pageWidth) * (1000 / pageHeight);
+            double pagesPerMetre = (1000 / pageWidth) * (1000 / pageHeight);
 
-            Double squareMetresText = (pageCount / 2) / pagesPerMetre;
-            Double squareMetresCover = 2 / pagesPerMetre;
+            double squareMetresText = (pageCount / 2) / pagesPerMetre;
+            double squareMetresCover = 2 / pagesPerMetre;
 
-            Double textGrammage = squareMetresText * textWeight;
-            Double coverGrammage = squareMetresCover * coverWeight;
+            double textGrammage = squareMetresText * textWeight;
+            double coverGrammage = squareMetresCover * coverWeight;
 
             bookWeight = textGrammage + coverGrammage + 0.7;
 
@@ -377,8 +379,8 @@ public class BindingCalculatorFragment extends Fragment implements View.OnClickL
         String savedPageCountEditText = pageCountET.getText().toString();
         String savedSpineWidthTextView = spineWidthAmountTV.getText().toString();
         String savedWeightTextView = bookWeightTextView.getText().toString();
-        Integer savedCoverWeightSpinnerItem = coverPageWeightSpinner.getSelectedItemPosition();
-        Integer savedTextWeightSpinnerItem = textPageWeightSpinner.getSelectedItemPosition();
+        int savedCoverWeightSpinnerItem = coverPageWeightSpinner.getSelectedItemPosition();
+        int savedTextWeightSpinnerItem = textPageWeightSpinner.getSelectedItemPosition();
 
         // Get SharedPreferences
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -509,7 +511,7 @@ public class BindingCalculatorFragment extends Fragment implements View.OnClickL
 
             } else if (spineWidthFinal >= 3) {
 
-                spineWidthAmountTV.setText(String.format("%.01f", spineWidthFinal) + " mm");
+                spineWidthAmountTV.setText(String.format(Locale.getDefault(),"%.01f", spineWidthFinal) + " mm");
 
 
                 calculateWeight();
@@ -524,8 +526,8 @@ public class BindingCalculatorFragment extends Fragment implements View.OnClickL
     public void onResume() {
         super.onResume();
         // Set title
-        getActivity().getActionBar()
-                .setTitle(R.string.binding_calculator);
+        final ActionBar actionBar = ((AppCompatActivity) requireActivity() ).getSupportActionBar();
+        if(actionBar != null) actionBar.setTitle(R.string.binding_calculator);
     }
 
 

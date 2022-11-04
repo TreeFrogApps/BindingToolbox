@@ -3,6 +3,7 @@ package com.home.treefrogapps.bindingtoolbox;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -26,7 +28,7 @@ import java.util.List;
 public class MyActivity extends AppCompatActivity {
 
 
-    String[] menutitles;
+    String[] menuTitles;
 
 
     // nav drawer title
@@ -50,7 +52,13 @@ public class MyActivity extends AppCompatActivity {
 
         mTitle = mDrawerTitle = getTitle();
 
-        menutitles = getResources().getStringArray(R.array.nav_draw_items);
+        menuTitles = getResources().getStringArray(R.array.nav_draw_items);
+
+        final ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
 
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -58,7 +66,7 @@ public class MyActivity extends AppCompatActivity {
 
         rowItems = new ArrayList<>();
 
-        for (String menuTitle : menutitles) {
+        for (String menuTitle : menuTitles) {
             RowItem items = new RowItem(menuTitle);
             rowItems.add(items);
         }
@@ -69,22 +77,17 @@ public class MyActivity extends AppCompatActivity {
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new SlideItemListener());
 
-        // enabling action bar app icon and behaving it as toggle button
-        final ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeButtonEnabled(true);
-        }
-
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.app_name, R.string.app_name) {
             public void onDrawerClosed(View view) {
-                getActionBar().setTitle(mTitle);
+                final ActionBar actionBar = getSupportActionBar();
+                if(actionBar != null) actionBar.setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
                 invalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(mDrawerTitle);
+                final ActionBar actionBar = getSupportActionBar();
+                if(actionBar != null) actionBar.setTitle(mDrawerTitle);
                 // calling onPrepareOptionsMenu() to hide action bar icons
                 invalidateOptionsMenu();
             }
@@ -130,7 +133,7 @@ public class MyActivity extends AppCompatActivity {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
             // update selected item and title, then close the drawer
-            setTitle(menutitles[position]);
+            setTitle(menuTitles[position]);
             mDrawerLayout.closeDrawer(mDrawerList);
         } else {
             // error in creating fragment

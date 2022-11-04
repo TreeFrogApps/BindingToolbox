@@ -103,11 +103,11 @@
         The cover is then placed on and wrapped around the text. After a short period of drying the top,
         bottom and fore-edge are trimmed to finish size.</string>
 
-    <string name="pur_binding_2">
+    <string name="pur_binding_2" formatted="false">
         In essence this uses the exact same process as Perfect Binding, the only difference is the type of glue used.
         PUR Binding uses a polyurethane reactive adhesive.  PUR Binding offers advantages over Perfect Binding,
         although both types are widely used.  Typically PUR Binding uses less glue on the spine of a book,
-        offering a more ’squared look’ to the spine, also it is around 40-60%% stronger (page pull tests)
+        offering a more ’squared look’ to the spine, also it is around 40-60% stronger (page pull tests)
         with more flexibility and pliability.
     </string>
 
@@ -138,7 +138,7 @@
     <string name="help_5">3. Enter the number of TEXT pages (not including cover)</string>
     <string name="help_6">4. Enter the stock (paper) weight (this is measured in ISO 536 standard grams per square metre, or gsm for short)</string>
     <string name="help_7">5. Press the calculate button</string>
-    <string name="help_8"> Disclaimer: \n\nAlthough thorough testing has been performed, and used in a commercial environment all final results are not the conclusively 100%% accurate as paper manufacturers work within tolerances of 5%%.
+    <string name="help_8" formatted="false"> Disclaimer: \n\nAlthough thorough testing has been performed, and used in a commercial environment all final results are not the conclusively 100% accurate as paper manufacturers work within tolerances of 5%.
               No responsibility or liability is taken for any inaccurate calculations.</string>
     <string name="tree_frog_apps">\u00a9 Tree Frog Apps</string>
 
