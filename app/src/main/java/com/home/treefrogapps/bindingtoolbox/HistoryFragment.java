@@ -1,8 +1,6 @@
 package com.home.treefrogapps.bindingtoolbox;
 
 
-import android.app.AlertDialog;
-import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -15,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -126,7 +127,7 @@ public class HistoryFragment extends ListFragment {
             case R.id.action_delete:
 
                 if (spineList.size() > 0) {
-                    new AlertDialog.Builder(getActivity())
+                    new AlertDialog.Builder(requireActivity())
                             .setTitle("Confirm Delete")
                             .setMessage("Do you want to clear history?")
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

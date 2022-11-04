@@ -4,12 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,18 +13,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 // create a custom adapter to extend - supercede ArrayAdapter defaults?
 public class SpineAdapter extends ArrayAdapter<HashMap<String, String>> {
 
-
     private final Context context;
     private final ArrayList<HashMap<String, String>> spineList;
-    private DBTools dbTools;
-
-
+    private final DBTools dbTools;
 
 
     // View lookup cache
@@ -80,18 +78,18 @@ public class SpineAdapter extends ArrayAdapter<HashMap<String, String>> {
             convertView = inflater.inflate(R.layout.spine_entry, parent, false);
 
             // hold the information in the viewHolder
-            viewHolder.spineId = (TextView) convertView.findViewById(R.id.spineId);
-            viewHolder.spineTitle = (TextView) convertView.findViewById(R.id.history_spine_title);
-            viewHolder.history_dateTEXT = (TextView) convertView.findViewById(R.id.history_dateTEXT);
-            viewHolder.history_pageCountTEXT = (TextView) convertView.findViewById(R.id.history_pageCountTEXT);
-            viewHolder.history_pageWidthTEXT = (TextView) convertView.findViewById(R.id.history_pageWidthTEXT);
-            viewHolder.history_pageHeightTEXT = (TextView) convertView.findViewById(R.id.history_pageHeightTEXT);
-            viewHolder.history_coverTEXT = (TextView) convertView.findViewById(R.id.history_coverTEXT);
-            viewHolder.history_textTEXT = (TextView) convertView.findViewById(R.id.history_textTEXT);
-            viewHolder.history_spineTEXT = (TextView) convertView.findViewById(R.id.history_spineTEXT);
-            viewHolder.history_weightTEXT = (TextView) convertView.findViewById(R.id.history_weightTEXT);
-            viewHolder.deleteButton = (Button) convertView.findViewById(R.id.delete_entry);
-            viewHolder.editButton = (Button) convertView.findViewById(R.id.edit_entry);
+            viewHolder.spineId = convertView.findViewById(R.id.spineId);
+            viewHolder.spineTitle = convertView.findViewById(R.id.history_spine_title);
+            viewHolder.history_dateTEXT = convertView.findViewById(R.id.history_dateTEXT);
+            viewHolder.history_pageCountTEXT = convertView.findViewById(R.id.history_pageCountTEXT);
+            viewHolder.history_pageWidthTEXT = convertView.findViewById(R.id.history_pageWidthTEXT);
+            viewHolder.history_pageHeightTEXT = convertView.findViewById(R.id.history_pageHeightTEXT);
+            viewHolder.history_coverTEXT = convertView.findViewById(R.id.history_coverTEXT);
+            viewHolder.history_textTEXT = convertView.findViewById(R.id.history_textTEXT);
+            viewHolder.history_spineTEXT = convertView.findViewById(R.id.history_spineTEXT);
+            viewHolder.history_weightTEXT = convertView.findViewById(R.id.history_weightTEXT);
+            viewHolder.deleteButton = convertView.findViewById(R.id.delete_entry);
+            viewHolder.editButton = convertView.findViewById(R.id.edit_entry);
 
             // store the information in a tag
             convertView.setTag(viewHolder);
@@ -114,84 +112,61 @@ public class SpineAdapter extends ArrayAdapter<HashMap<String, String>> {
         viewHolder.history_weightTEXT.setText(spine.get("bookWeight"));
 
 
-
         // set onClickListener for edit button
-        viewHolder.editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        viewHolder.editButton.setOnClickListener(view -> {
 
+            // Convert that contactId into a String
 
+            String spineIdValue = viewHolder.spineId.getText().toString();
 
-                // Convert that contactId into a String
-
-                String spineIdValue = viewHolder.spineId.getText().toString();
-
-                Fragment myFragment = new BindingCalculatorFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("widthId", spineIdValue);
-                myFragment.setArguments(bundle);
-                FragmentManager fm = ((FragmentActivity)context).getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.content_frame, myFragment).addToBackStack(null).commit();
-            }
+            Fragment myFragment = new BindingCalculatorFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("widthId", spineIdValue);
+            myFragment.setArguments(bundle);
+            FragmentManager fm = ((FragmentActivity) context).getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.content_frame, myFragment).addToBackStack(null).commit();
         });
 
         // set onClickListener for delete button
 
         final View finalConvertView = convertView;
-        viewHolder.deleteButton.setOnClickListener(new View.OnClickListener() {
+        viewHolder.deleteButton.setOnClickListener(view -> {
 
-            @Override
-            public void onClick(View view) {
-
-                String spineIdValue = viewHolder.spineId.getText().toString();
-                dbTools.deleteSingleSpine(spineIdValue);
+            String spineIdValue = viewHolder.spineId.getText().toString();
+            dbTools.deleteSingleSpine(spineIdValue);
 
 
-                //animation for listItem deletion
-                PropertyValuesHolder pvhW = PropertyValuesHolder.ofFloat(View.ALPHA, 0);
-                PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, -1000);
+            //animation for listItem deletion
+            PropertyValuesHolder pvhW = PropertyValuesHolder.ofFloat(View.ALPHA, 0);
+            PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat(View.TRANSLATION_X, -1000);
             //    PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat(View.SCALE_X, 0);
             //   PropertyValuesHolder pvhZ = PropertyValuesHolder.ofFloat(View.SCALE_Y, 0);
 
 
-                ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(finalConvertView, pvhW, pvhX);
-                finalConvertView.setHasTransientState(true);
-                anim.setDuration(500);
+            ObjectAnimator anim = ObjectAnimator.ofPropertyValuesHolder(finalConvertView, pvhW, pvhX);
+            finalConvertView.setHasTransientState(true);
+            anim.setDuration(500);
 
-                anim.addListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
+            anim.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    spineList.remove(position);
 
-                        int firstPosition = spineList.indexOf(0) + spineList.indexOf(position);
-
-                        spineList.remove(position);
-
-                        finalConvertView.setAlpha(1);
-                        finalConvertView.setTranslationX(0);
+                    finalConvertView.setAlpha(1);
+                    finalConvertView.setTranslationX(0);
                     //    finalConvertView.setScaleX(1);
                     //    finalConvertView.setScaleY(1);
 
-                        for (int i = firstPosition; i < spineList.size(); i++){
+                    finalConvertView.setHasTransientState(false);
 
-                            spineList.indexOf(i);
-                            int moveUp = finalConvertView.getHeight();
-                            finalConvertView.setTranslationY(moveUp);
-                            finalConvertView.animate().setDuration(150).translationY(0);
-
-                        }
-
-                        finalConvertView.setHasTransientState(false);
-
-                        notifyDataSetChanged();
-                    }
-                });
-                anim.start();
+                    notifyDataSetChanged();
+                }
+            });
+            anim.start();
 
 
-            }
         });
-
 
 
         // Return the completed view to render on screen

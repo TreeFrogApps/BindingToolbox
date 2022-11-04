@@ -2,13 +2,14 @@ package com.home.treefrogapps.bindingtoolbox;
 
 
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 
 /**
@@ -33,7 +34,7 @@ public class BindingTypesFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.my, menu);
 
         MenuItem delete = menu.findItem(R.id.action_delete);

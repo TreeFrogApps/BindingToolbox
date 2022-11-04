@@ -1,13 +1,9 @@
 package com.home.treefrogapps.bindingtoolbox;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,11 +11,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MyActivity extends FragmentActivity {
+public class MyActivity extends AppCompatActivity {
 
 
     String[] menutitles;
@@ -36,9 +40,6 @@ public class MyActivity extends FragmentActivity {
     public List<RowItem> rowItems;
     public CustomAdapter adapter;
 
-    Menu menu;
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -52,13 +53,13 @@ public class MyActivity extends FragmentActivity {
         menutitles = getResources().getStringArray(R.array.nav_draw_items);
 
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.slider_menu);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mDrawerList = findViewById(R.id.slider_menu);
 
-        rowItems = new ArrayList<RowItem>();
+        rowItems = new ArrayList<>();
 
-        for (String menutitle : menutitles) {
-            RowItem items = new RowItem(menutitle);
+        for (String menuTitle : menutitles) {
+            RowItem items = new RowItem(menuTitle);
             rowItems.add(items);
         }
 
@@ -66,13 +67,16 @@ public class MyActivity extends FragmentActivity {
         adapter = new CustomAdapter(getApplicationContext(), rowItems);
 
         mDrawerList.setAdapter(adapter);
-        mDrawerList.setOnItemClickListener(new SlideitemListener());
+        mDrawerList.setOnItemClickListener(new SlideItemListener());
 
         // enabling action bar app icon and behaving it as toggle button
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_navdrawer, R.string.app_name, R.string.app_name) {
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.app_name, R.string.app_name) {
             public void onDrawerClosed(View view) {
                 getActionBar().setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
@@ -86,7 +90,7 @@ public class MyActivity extends FragmentActivity {
             }
         };
 
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
             // on first time display view for first nav item
@@ -95,18 +99,12 @@ public class MyActivity extends FragmentActivity {
     }
 
 
-    class SlideitemListener implements ListView.OnItemClickListener {
+    class SlideItemListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
             mDrawerLayout.closeDrawer(mDrawerList);
-            mDrawerLayout.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-            updateDisplay(position);
-                }
-            }, 300);
+            mDrawerLayout.postDelayed(() -> updateDisplay(position), 300);
         }
-
     }
 
     private void updateDisplay(int position) {
@@ -129,7 +127,7 @@ public class MyActivity extends FragmentActivity {
         }
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getFragmentManager();
+            FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
             // update selected item and title, then close the drawer
             setTitle(menutitles[position]);
@@ -144,7 +142,8 @@ public class MyActivity extends FragmentActivity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) actionBar.setTitle(mTitle);
     }
 
     @Override
@@ -194,7 +193,7 @@ public class MyActivity extends FragmentActivity {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);

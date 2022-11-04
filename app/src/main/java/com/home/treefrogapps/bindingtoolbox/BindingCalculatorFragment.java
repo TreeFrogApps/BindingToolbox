@@ -1,7 +1,6 @@
 package com.home.treefrogapps.bindingtoolbox;
 
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,6 +17,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -109,7 +110,7 @@ public class BindingCalculatorFragment extends Fragment implements View.OnClickL
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.my, menu);
 
         MenuItem delete = menu.findItem(R.id.action_delete);
